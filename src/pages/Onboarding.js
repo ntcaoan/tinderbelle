@@ -1,7 +1,22 @@
-import {useState} from "react";
 import Nav from '../components/Nav'
+import {useState} from "react";
 
 const Onboarding = () => {
+
+    const [formData, setFormData] = useState({
+        user_id: '',
+        first_name: '',
+        dob_day: '',
+        dob_month: '',
+        dob_year: '',
+        show_gender: false,
+        gender_identity: 'man',
+        gender_interest: 'woman',
+        email: '',
+        url: '',
+        about: '',
+        matched: []
+    })
 
     const handleSubmit = () => (
         console.log('submitted')
