@@ -108,8 +108,69 @@ const Onboarding = () => {
                             checked={false}
                         />
 
+                        <label>Show me</label>
+                        <div className="multiple-input-container">
+                            <input
+                                id="woman-gender-interest"
+                                type="radio"
+                                name="gender_interest"
+                                value="woman"
+                                onChange={handleChange}
+                                checked={false}
+                            />
+                            <label htmlFor="woman-gender-interest">woman</label>
 
+                            <input
+                                id="man-gender-interest"
+                                type="radio"
+                                name="gender_interest"
+                                value="man"
+                                onChange={handleChange}
+                                checked={false}
+                            />
+                            <label htmlFor="man-gender-interest">man</label>
+
+                            <input
+                                id="everyone-gender-interest"
+                                type="radio"
+                                name="gender_interest"
+                                value="everyone"
+                                onChange={handleChange}
+                                checked={false}
+                            />
+                            <label htmlFor="everyone-gender-interest">everyone</label>
+                        </div>
+
+                        <label htmlFor="about">about you</label>
+                        <input
+                            id="about"
+                            type="text"
+                            name="about"
+                            required={true}
+                            placeholder="I like hackathonsss!"
+                            value={""}
+                            onChange={handleChange}
+                        />
+
+                        <input type="submit"/>
                     </section>
+
+
+                    <section>
+                        <label htmlFor="url">Profile Picture</label>
+                        <input
+                            type="url"
+                            name="url"
+                            id="url"
+                            onChange={handleChange}
+                            required={true}
+                        />
+                        <div className="photo-container">
+
+                        </div>
+                    </section>
+
+
                 </form>
             </div>
         </>
