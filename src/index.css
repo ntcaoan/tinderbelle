@@ -139,6 +139,10 @@ nav .logo-container .logo {
 
 /*----- ONBOARDING page -----*/
 
+.onboarding {
+    border-top: solid 1px rgb(213, 213, 213);
+}
+
 /*2 sections are next to each other */
 .onboarding form {
     display: flex;
@@ -155,14 +159,15 @@ nav .logo-container .logo {
 
 
 .onboarding form input {
-    padding: 15px 30px; /* 15 top bottm 30 each side */
+    padding: 15px 30px; /* 15 top bottom 30 each side */
     margin: 10px 0;
     font-size: 15px;
     border: solid 2px rgb(219, 219, 219);
     border-radius: 10px;
 }
 
-.onboarding form input::-webkit-outer-spin-button
+
+.onboarding form input::-webkit-outer-spin-button,
 .onboarding form input::-webkit-inner-spin-button
 {
     -webkit-appearance: none;
@@ -215,6 +220,9 @@ nav .logo-container .logo {
     background-color: rgb(226, 115, 115);
 }
 
+.onboarding form .photo-container img{
+    width: 100%;
+}
 
 
 

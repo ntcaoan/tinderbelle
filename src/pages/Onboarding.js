@@ -18,13 +18,22 @@ const Onboarding = () => {
         matched: []
     })
 
-    const handleSubmit = () => (
+    const handleSubmit = () => {
         console.log('submitted')
-    )
+    }
 
-    const handleChange = () => (
-        console.log('change')
-    )
+    const handleChange = (e) => {
+        console.log('e', e)
+        const value = e.target.type === "checkbox" ? e.target.checked : e.target.value
+        const name = e.target.name
+
+        setFormData((prevState) => ({
+            ...prevState,
+            [name]: value
+        }))
+    }
+
+    console.log(formData)
 
     return (
         <>
@@ -45,7 +54,7 @@ const Onboarding = () => {
                             name="first_name"
                             placeholder="your first name"
                             required={true}
-                            value={""}
+                            value={formData.first_name}
                             onChange={handleChange}
                         />
 
@@ -57,7 +66,7 @@ const Onboarding = () => {
                                 name="dob_day"
                                 placeholder="DD"
                                 required={true}
-                                value={""}
+                                value={formData.dob_day}
                                 onChange={handleChange}
                             />
                             <input
@@ -66,7 +75,7 @@ const Onboarding = () => {
                                 name="dob_month"
                                 placeholder="MM"
                                 required={true}
-                                value={""}
+                                value={formData.dob_month}
                                 onChange={handleChange}
                             />
                             <input
@@ -75,7 +84,7 @@ const Onboarding = () => {
                                 name="dob_year"
                                 placeholder="YYYY"
                                 required={true}
-                                value={""}
+                                value={formData.dob_year}
                                 onChange={handleChange}
                             />
                         </div>
@@ -89,7 +98,7 @@ const Onboarding = () => {
                                 name="gender_identity"
                                 value="woman"
                                 onChange={handleChange}
-                                checked={false}
+                                checked={formData.gender_identity === 'woman'}
                             />
                             <label htmlFor="woman-gender-identity">woman</label>
 
@@ -99,7 +108,7 @@ const Onboarding = () => {
                                 name="gender_identity"
                                 value="man"
                                 onChange={handleChange}
-                                checked={false}
+                                checked={formData.gender_identity === 'man'}
                             />
                             <label htmlFor="man-gender-identity">man</label>
 
@@ -109,18 +118,19 @@ const Onboarding = () => {
                                 name="gender_identity"
                                 value="more"
                                 onChange={handleChange}
-                                checked={false}
+                                checked={formData.gender_identity === 'more'}
                             />
                             <label htmlFor="more-gender-identity">others</label>
                         </div>
 
                         <label htmlFor="show-gender">Show gender on my profile</label>
+
                         <input
                             id="show-gender"
                             type="checkbox"
                             name="show_gender"
                             onChange={handleChange}
-                            checked={false}
+                            checked={formData.show_gender}
                         />
 
                         <label>Show me</label>
@@ -131,7 +141,7 @@ const Onboarding = () => {
                                 name="gender_interest"
                                 value="woman"
                                 onChange={handleChange}
-                                checked={false}
+                                checked={formData.gender_interest === 'woman'}
                             />
                             <label htmlFor="woman-gender-interest">woman</label>
 
@@ -141,7 +151,7 @@ const Onboarding = () => {
                                 name="gender_interest"
                                 value="man"
                                 onChange={handleChange}
-                                checked={false}
+                                checked={formData.gender_interest === 'man'}
                             />
                             <label htmlFor="man-gender-interest">man</label>
 
@@ -151,7 +161,7 @@ const Onboarding = () => {
                                 name="gender_interest"
                                 value="everyone"
                                 onChange={handleChange}
-                                checked={false}
+                                checked={formData.gender_interest === 'everyone'}
                             />
                             <label htmlFor="everyone-gender-interest">everyone</label>
                         </div>
@@ -163,7 +173,7 @@ const Onboarding = () => {
                             name="about"
                             required={true}
                             placeholder="I like hackathonsss!"
-                            value={""}
+                            value={formData.about}
                             onChange={handleChange}
                         />
 
@@ -181,6 +191,7 @@ const Onboarding = () => {
                             required={true}
                         />
                         <div className="photo-container">
+                            <img src={formData.url} alt="profile pic" />
 
                         </div>
                     </section>
