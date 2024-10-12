@@ -88,6 +88,7 @@ nav .logo-container .logo {
 
 /*----- Homepage -----*/
 
+
 .overlay {
     width: 100vw;
     height: 100vh;
@@ -96,7 +97,7 @@ nav .logo-container .logo {
                 to bottom,
             rgba(0, 0, 0, 0.5) 0%,
             rgba(0, 0, 0, 0.1) 100%
-            ), url('images/6e9794bcedeecf5a8f8f41338a2a7345.webp')
+            ), url('images/Untitled-3.jpg')
 }
 
 .home {
