@@ -10,7 +10,7 @@ const Dashboard = () => {
         { name: 'Dinesh Chugtai', url: './img/dinesh.jpg' }
     ];
 
-    const [lastDirection, setLastDirection] = useState();
+    const [lastDirection ,setLastDirection] = useState();
 
     const swiped = (direction, nameToDelete) => {
         console.log('removing ' + nameToDelete);
